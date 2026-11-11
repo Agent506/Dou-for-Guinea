@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#CE1126">
+<title>Table des mots</title>
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+/* Layout: a working sheet. One table per lesson; on phones each word becomes a small card.
+   Colours: Guinea's flag (same as the app). Missing translations are purple and dashed, never yellow. */
+:root {
+  --flag-red: #CE1126; --flag-yellow: #FCD116; --flag-green: #009460; --flag-green-dark: #006A44; --on-flag: #FFFFFF;
+  --bg: #F7F7F3; --surface: #FFFFFF; --fg: #17201B; --muted: #59635D; --line: #DCDFD8;
+  --green: #00754C; --green-ink: #FFFFFF; --green-soft: #E2F3EA;
+  --todo: #EFEBFF; --todo-line: #6C58DA; --red: #B50F21; --check-fg: #1F5F99;
+  --font: "Noto Sans App", system-ui, Roboto, "Noto Sans", "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101311; --surface: #1A1F1C; --fg: #ECEFEA; --muted: #A2ACA5; --line: #2F3732;
+    --green: #4ED39A; --green-soft: #12301F;
+    --todo: #29234F; --todo-line: #9886F5; --red: #FF7480; --check-fg: #8EC6F2;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101311; --surface: #1A1F1C; --fg: #ECEFEA; --muted: #A2ACA5; --line: #2F3732;
+  --green: #4ED39A; --green-soft: #12301F;
+  --todo: #29234F; --todo-line: #9886F5; --red: #FF7480; --check-fg: #8EC6F2;
+  color-scheme: dark;
+}
+.flag-stripe { display: flex; height: 8px; border-radius: 999px; overflow: hidden; }
+.flag-stripe i { flex: 1; }
+.flag-stripe i:nth-child(1) { background: var(--flag-red); }
+.flag-stripe i:nth-child(2) { background: var(--flag-yellow); }
+.flag-stripe i:nth-child(3) { background: var(--flag-green); }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.4 var(--font); }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--todo-line); outline-offset: 2px; }
+.wrap {
+  max-width: 1100px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 16px 48px;
+  display: flex; flex-direction: column; gap: 18px;
+}
+header { display: flex; flex-direction: column; gap: 8px; }
+.back { color: var(--green); font-weight: 700; text-decoration: none; padding: 6px 0; align-self: flex-start; }
+h1 { margin: 0; font-size: 28px; }
+h1 small, h2 small { font-weight: 500; color: var(--muted); font-size: .65em; }
+.status { margin: 0; color: var(--muted); }
+.status b { color: var(--fg); }
+.tools { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; position: sticky; top: 0; z-index: 2; background: var(--bg); padding-block: 8px; }
+.toggles, .tool-btns { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.toggle { min-height: 44px; padding: 6px 14px 6px 8px; border-radius: 999px; border: 2px solid var(--line); background: var(--surface); color: var(--muted); font-weight: 700; display: inline-flex; align-items: center; gap: 8px; text-decoration: line-through; }
+.toggle[aria-pressed="true"] { border-color: var(--green); background: var(--green-soft); color: var(--fg); text-decoration: none; }
+.toggle i { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font: 900 10px/1 var(--font); font-style: normal; color: #FFFFFF; background: var(--c, var(--muted)); }
+.part { gap: 12px; }
+.part-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; border-top: 3px solid var(--line); padding-top: 16px; }
+.part-title { margin: 0; flex: 1 1 100%; font-size: 26px; }
+td.key { color: var(--muted); font-size: 13px; width: 9em; overflow-wrap: anywhere; }
+th.hint-col { width: 9em; }
+button { font: inherit; cursor: pointer; }
+.btn { min-height: 48px; padding: 8px 16px; border-radius: 12px; border: 2px solid var(--line); background: var(--surface); color: var(--fg); font-weight: 700; }
+.btn.main { background: var(--flag-green); border-color: var(--flag-green-dark); color: var(--on-flag); }
+.btn.danger { color: var(--red); }
+.note { margin: 0; font-weight: 700; color: var(--green); min-height: 1.4em; }
+.legend { margin: 0; font-size: 15px; color: var(--muted); }
+.legend i { display: inline-block; width: 14px; height: 14px; border-radius: 3px; background: var(--todo); border: 2px dashed var(--todo-line); vertical-align: -2px; }
+
+section { display: flex; flex-direction: column; gap: 8px; }
+h2 { margin: 12px 0 0; font-size: 22px; }
+.scroll { overflow-x: auto; background: var(--surface); border: 2px solid var(--line); border-radius: 14px; }
+table { border-collapse: collapse; width: 100%; min-width: 760px; }
+th, td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: middle; }
+th { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--bg); }
+td.num { width: 3em; color: var(--muted); font-variant-numeric: tabular-nums; }
+tr.title-row td { background: var(--green-soft); }
+input {
+  width: 100%; min-height: 42px; padding: 6px 10px;
+  font: inherit; color: var(--fg); background: var(--surface);
+  border: 2px solid var(--line); border-radius: 8px;
+}
+input.todo { background: var(--todo); border-color: var(--todo-line); border-style: dashed; }
+input::placeholder { color: var(--muted); font-size: 13px; font-weight: 700; }
+/* Draft word from a book: "To check" tag and a Confirm button under the word */
+.check-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 6px; }
+.to-check { display: inline-block; padding: 0 7px; border-radius: 6px; border: 1.5px solid currentColor; color: var(--check-fg); font-size: 12px; font-weight: 800; line-height: 1.6; }
+.confirm { min-height: 36px; padding: 4px 12px; border-radius: 10px; border: 2px solid var(--flag-green); background: var(--surface); color: var(--green); font-weight: 800; font-size: 14px; }
+/* Other ways to say it (alt) and short explanation (note) */
+.extra { display: flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 12px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.extra input { min-height: 34px; font-size: 15px; font-weight: 400; letter-spacing: 0; text-transform: none; }
+.counts { margin: 0 0 4px; padding-left: 1.2em; }
+.add { align-self: flex-start; }
+details { background: var(--surface); border: 2px solid var(--line); border-radius: 14px; padding: 12px 16px; }
+summary { cursor: pointer; font-weight: 700; }
+textarea { width: 100%; height: 320px; margin-top: 10px; font: 13px/1.4 ui-monospace, Consolas, monospace; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px; }
+.print-only { display: none; }
+
+/* Phones: each word is a card with labels */
+@media (max-width: 700px) {
+  .tools { position: static; }
+  .tool-btns { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+  .part-head .btn { flex: 1 1 40%; }
+  td.key { width: auto; }
+  .scroll { overflow: visible; background: none; border: 0; }
+  table { min-width: 0; }
+  thead { display: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  tr { background: var(--surface); border: 2px solid var(--line); border-radius: 14px; padding: 8px 12px; margin-bottom: 10px; }
+  tr.title-row { background: var(--green-soft); }
+  tr.title-row td { background: none; }
+  td { border: 0; padding: 4px 0; }
+  td.num { width: auto; font-weight: 800; color: var(--fg); }
+  td.empty { display: none; }
+  td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+}
+
+/* Paper copy for native speakers to write on */
+@media print {
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .no-print, .tools, details, .add, .back, .part-head .btn { display: none !important; }
+  .print-only { display: table-cell; }
+  .scroll { border: 0; overflow: visible; }
+  table { min-width: 0; }
+  th, td { border: 1px solid #999; color: #000; background: #fff !important; }
+  input { border: 0; padding: 0; min-height: 0; background: none !important; color: #000; }
+  input::placeholder { color: #999; }
+  section { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="flag-stripe" aria-hidden="true"><i></i><i></i><i></i></div>
+    <a class="back" href="./">← Appli / App</a>
+    <h1>Table des mots <small>Word table</small></h1>
+    <p class="status" id="status">…</p>
+    <p class="legend no-print"><i></i> = à traduire / to translate. Écris dans la case. / Type in the box.</p>
+  </header>
+
+  <div class="tools">
+    <div class="toggles" id="toggles" role="group" aria-label="Colonnes / Columns"></div>
+    <div class="tool-btns">
+      <button class="btn" id="print">Imprimer / Print</button>
+      <button class="btn danger" id="reset">Effacer mes changements</button>
+    </div>
+  </div>
+  <p class="note" id="note" aria-live="polite"></p>
+
+  <section class="part">
+    <div class="part-head">
+      <h2 class="part-title">Mots <small>Words · lessons.json</small></h2>
+      <button class="btn main" data-download="lessons">Télécharger lessons.json</button>
+      <button class="btn" data-copy="lessons">Copier / Copy</button>
+    </div>
+    <div id="words"></div>
+  </section>
+
+  <section class="part">
+    <div class="part-head">
+      <h2 class="part-title">Textes de l'appli <small>App text · ui-text.json</small></h2>
+      <button class="btn main" data-download="ui">Télécharger ui-text.json</button>
+      <button class="btn" data-copy="ui">Copier / Copy</button>
+    </div>
+    <div id="ui"></div>
+  </section>
+
+  <details id="raw">
+    <summary id="rawLabel">Voir le texte du fichier / Show file text</summary>
+    <textarea id="rawText" readonly spellcheck="false"></textarea>
+  </details>
+</div>
+<script src="js/edit.js"></script>
+</body>
+</html>

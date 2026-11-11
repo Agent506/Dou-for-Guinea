@@ -1,0 +1,428 @@
+{
+  "help": [
+    "HOW TO EDIT THIS FILE / COMMENT MODIFIER CE FICHIER",
+    "1. Only change text between quotes \"like this\". / Change seulement le texte entre guillemets.",
+    "2. Do not remove commas , quotes \" or brackets { } [ ]. / Ne supprime pas les virgules, guillemets ou crochets.",
+    "3. Replace TO BE TRANSLATED with the right word. / Remplace TO BE TRANSLATED par le bon mot.",
+    "4. One field per language: french, english, susu, maninka, pular. To add a language, add its field to each word (and a block in ui-text.json).",
+    "5. status: \"draft\" = word from Peace Corps books, not checked yet (the app shows 'À vérifier / To check'). Change it to \"confirmed\" when a speaker has checked it.",
+    "6. alt = other ways to say it. note = a short explanation. Both are shown in the word table.",
+    "7. Keep the special letters exactly: ɛ ɔ ɲ ɗ ɓ ñ.",
+    "8. picture = a file in the pictures folder, like \"bonjour.jpg\".",
+    "9. audio = a file name, like \"bonjour.mp3\". Put each recording in its language folder: audio/french/bonjour.mp3, audio/susu/bonjour.mp3.",
+    "10. Easier way: open the Word table page in the app (edit.html), type there, and download the new file."
+  ],
+  "version": 4,
+  "lessons": [
+    {
+      "id": "greetings",
+      "title": { "french": "Salutations", "english": "Greetings", "susu": "TO BE TRANSLATED", "maninka": "TO BE TRANSLATED", "pular": "TO BE TRANSLATED" },
+      "words": [
+        {
+          "french": "Bonjour", "english": "Hello / Good morning",
+          "susu": "I kɛna", "maninka": "I ni tilin", "pular": "A jaraama",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "susu": "I fɛɲɛn = afternoon", "maninka": "I ni saxuma = morning", "pular": "On jaraama = respectful" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "Bonsoir", "english": "Good evening",
+          "susu": "I nunmare", "maninka": "I ni wura", "pular": "On hiiri e jam?",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "note": { "pular": "respectful" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "Salut", "english": "Hi",
+          "susu": "I nu wali", "maninka": "TO BE TRANSLATED", "pular": "No wa'i?",
+          "status": { "susu": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "Comment ça va ?", "english": "How are you?",
+          "susu": "I nu wali", "maninka": "I xa kɛndɛ?", "pular": "Hida e jam?",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "susu": "Tana mu na?", "maninka": "Hɛra bɛ?" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "Ça va bien", "english": "I am fine",
+          "susu": "Tana yo mu na", "maninka": "Tana tɛ", "pular": "Jam tun",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "maninka": "Hɛra dɔrɔn" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "Merci", "english": "Thank you",
+          "susu": "I nu wali", "maninka": "I ni baraji", "pular": "A jaraama",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "susu": "Albarka", "pular": "Albarka, Alhamdullilahi" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "S'il vous plaît", "english": "Please",
+          "susu": "hakɛto", "maninka": "Hakɛtu", "pular": "TO BE TRANSLATED",
+          "status": { "susu": "draft", "maninka": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "Au revoir", "english": "Goodbye",
+          "susu": "Won na tɛmui", "maninka": "X'an bɛn", "pular": "Oo-o!",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "pular": "En jango = see you tomorrow" },
+          "note": { "susu": "means: see you later", "maninka": "means: see you" },
+          "picture": "", "audio": ""
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "title": { "french": "Nombres 1 à 10", "english": "Numbers 1-10", "susu": "TO BE TRANSLATED", "maninka": "TO BE TRANSLATED", "pular": "TO BE TRANSLATED" },
+      "words": [
+        {
+          "french": "un", "english": "one (1)",
+          "susu": "keren", "maninka": "kilin", "pular": "go'o",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "deux", "english": "two (2)",
+          "susu": "firin", "maninka": "hula", "pular": "ɗiɗi",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "trois", "english": "three (3)",
+          "susu": "saxan", "maninka": "saba", "pular": "tati",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "quatre", "english": "four (4)",
+          "susu": "naani", "maninka": "naani", "pular": "nay",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "cinq", "english": "five (5)",
+          "susu": "suli", "maninka": "lulu", "pular": "jowi",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "maninka": "luulu" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "six", "english": "six (6)",
+          "susu": "sɛnni", "maninka": "TO BE TRANSLATED", "pular": "jeego",
+          "status": { "susu": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "sept", "english": "seven (7)",
+          "susu": "solofere", "maninka": "TO BE TRANSLATED", "pular": "jeeɗiɗi",
+          "status": { "susu": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "huit", "english": "eight (8)",
+          "susu": "solomasaxan", "maninka": "TO BE TRANSLATED", "pular": "jeetati",
+          "status": { "susu": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "neuf", "english": "nine (9)",
+          "susu": "solomanaani", "maninka": "TO BE TRANSLATED", "pular": "jeenay",
+          "status": { "susu": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "dix", "english": "ten (10)",
+          "susu": "fu", "maninka": "tan", "pular": "sappo",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "title": { "french": "La famille", "english": "Family", "susu": "TO BE TRANSLATED", "maninka": "TO BE TRANSLATED", "pular": "TO BE TRANSLATED" },
+      "words": [
+        {
+          "french": "le père", "english": "father",
+          "susu": "baba", "maninka": "Ha", "pular": "baaba",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "la mère", "english": "mother",
+          "susu": "nga", "maninka": "Ba", "pular": "neene",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le frère", "english": "brother",
+          "susu": "maxamɛ", "maninka": "Balimakɛ", "pular": "koto",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "susu": "tara xamɛma = older", "maninka": "Xɔtɔkɛ = older, Dɔxɔkɛ = younger", "pular": "miñan = younger sibling" },
+          "note": { "pular": "older brother" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "la sœur", "english": "sister",
+          "susu": "maginɛ", "maninka": "Balimamusuo", "pular": "jaaja",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "susu": "tara ginɛma = older", "maninka": "Xɔtɔmusuo = older", "pular": "miñan = younger sibling" },
+          "note": { "pular": "older sister" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le fils", "english": "son",
+          "susu": "di", "maninka": "Dinkɛ", "pular": "biɗɗo",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "note": { "susu": "also means child", "pular": "also means child" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "la fille", "english": "daughter",
+          "susu": "TO BE TRANSLATED", "maninka": "Dinmusuo", "pular": "biɗɗo",
+          "status": { "maninka": "draft", "pular": "draft" },
+          "note": { "pular": "also means child" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le grand-père", "english": "grandfather",
+          "susu": "tanun", "maninka": "Mamakɛ", "pular": "soro",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "la grand-mère", "english": "grandmother",
+          "susu": "mama", "maninka": "Mamamusuo", "pular": "pati",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le mari", "english": "husband",
+          "susu": "xamɛ", "maninka": "Kɛ", "pular": "moodi",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "susu": "mɔri" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "la femme", "english": "wife",
+          "susu": "ginɛ", "maninka": "Musuo", "pular": "beyngu",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        }
+      ]
+    },
+    {
+      "id": "phrases",
+      "title": { "french": "Phrases utiles", "english": "Useful phrases", "susu": "TO BE TRANSLATED", "maninka": "TO BE TRANSLATED", "pular": "TO BE TRANSLATED" },
+      "words": [
+        {
+          "french": "Oui", "english": "Yes",
+          "susu": "TO BE TRANSLATED", "maninka": "TO BE TRANSLATED", "pular": "Hii-hi",
+          "status": { "pular": "draft" },
+          "alt": { "pular": "Eyyo" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "Non", "english": "No",
+          "susu": "TO BE TRANSLATED", "maninka": "TO BE TRANSLATED", "pular": "O'o",
+          "status": { "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "Je ne comprends pas", "english": "I don't understand",
+          "susu": "N mu a faxamuxi", "maninka": "N m'a faamu", "pular": "Mi faamaali",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "Où ?", "english": "Where?",
+          "susu": "minden?", "maninka": "Min?", "pular": "honto?",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "J'ai faim", "english": "I am hungry",
+          "susu": "Kaamɛ na n ma", "maninka": "TO BE TRANSLATED", "pular": "Mido weela",
+          "status": { "susu": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "J'ai soif", "english": "I am thirsty",
+          "susu": "ye kɔli na n ma", "maninka": "TO BE TRANSLATED", "pular": "Mido donda",
+          "status": { "susu": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "title": { "french": "Nourriture et boisson", "english": "Food and drink", "susu": "TO BE TRANSLATED", "maninka": "TO BE TRANSLATED", "pular": "TO BE TRANSLATED" },
+      "words": [
+        {
+          "french": "l'eau", "english": "water",
+          "susu": "ye", "maninka": "jio", "pular": "ndiyan",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le riz", "english": "rice",
+          "susu": "bande", "maninka": "malu", "pular": "maaro",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "maninka": "malo; cooked: kino", "pular": "ñiiri = cooked food" },
+          "note": { "pular": "uncooked" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le pain", "english": "bread",
+          "susu": "taami", "maninka": "buro", "pular": "bireedi",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le poisson", "english": "fish",
+          "susu": "yɛxɛ", "maninka": "yɛgɛ", "pular": "liyyi",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "maninka": "yɛgo" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "la viande", "english": "meat",
+          "susu": "TO BE TRANSLATED", "maninka": "subo", "pular": "teew",
+          "status": { "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le lait", "english": "milk",
+          "susu": "TO BE TRANSLATED", "maninka": "nɔnɔ", "pular": "ɓiraadan",
+          "status": { "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le sucre", "english": "sugar",
+          "susu": "suka", "maninka": "sukaro", "pular": "sukkar",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le sel", "english": "salt",
+          "susu": "fɔxɛ", "maninka": "xɔxɔ", "pular": "landan",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "l'oignon", "english": "onion",
+          "susu": "yɛbɛ", "maninka": "TO BE TRANSLATED", "pular": "basalle",
+          "status": { "susu": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "manger", "english": "to eat",
+          "susu": "dɛgɛ", "maninka": "TO BE TRANSLATED", "pular": "ñaamugol",
+          "status": { "susu": "draft", "pular": "draft" },
+          "alt": { "susu": "don = to eat something" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "boire", "english": "to drink",
+          "susu": "min", "maninka": "min", "pular": "yarugol",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        }
+      ]
+    },
+    {
+      "id": "market",
+      "title": { "french": "Marché et argent", "english": "Market and money", "susu": "TO BE TRANSLATED", "maninka": "TO BE TRANSLATED", "pular": "TO BE TRANSLATED" },
+      "words": [
+        {
+          "french": "le marché", "english": "market",
+          "susu": "makiti", "maninka": "sugu", "pular": "maakiti",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "maninka": "saxa" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "l'argent", "english": "money",
+          "susu": "kɔbiri", "maninka": "wori", "pular": "mbuuɗi",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "alt": { "pular": "kaalisi" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le prix", "english": "price",
+          "susu": "TO BE TRANSLATED", "maninka": "sɔnŋɔ", "pular": "coggu",
+          "status": { "maninka": "draft", "pular": "draft" },
+          "alt": { "maninka": "da" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "Combien ?", "english": "How much?",
+          "susu": "yeri a ra?", "maninka": "X ye jali ti", "pular": "jelu",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "note": { "maninka": "means: how much is X?" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "C'est cher", "english": "It is expensive",
+          "susu": "A sare xɔrɔxɔ", "maninka": "X sɔnŋɔ xa gɛlɛ", "pular": "No satti",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        }
+      ]
+    },
+    {
+      "id": "body",
+      "title": { "french": "Le corps", "english": "The body", "susu": "TO BE TRANSLATED", "maninka": "TO BE TRANSLATED", "pular": "TO BE TRANSLATED" },
+      "words": [
+        {
+          "french": "la tête", "english": "head",
+          "susu": "xunyi", "maninka": "Kunxulo", "pular": "hoore",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "l'œil", "english": "eye",
+          "susu": "yae", "maninka": "Ɲa", "pular": "yiitere",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "note": { "susu": "book gives \"eyes\"" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le nez", "english": "nose",
+          "susu": "ɲɔɛ", "maninka": "Nun", "pular": "kinal",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "la bouche", "english": "mouth",
+          "susu": "dɛ", "maninka": "Da", "pular": "TO BE TRANSLATED",
+          "status": { "susu": "draft", "maninka": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "l'oreille", "english": "ear",
+          "susu": "tuli", "maninka": "Tulo", "pular": "nowru",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "la main", "english": "hand",
+          "susu": "bɛlɛxɛ", "maninka": "Tɛgɛ", "pular": "jungo",
+          "status": { "susu": "draft", "maninka": "draft", "pular": "draft" },
+          "note": { "susu": "also means arm", "pular": "also means arm" },
+          "picture": "", "audio": ""
+        },
+        {
+          "french": "le ventre", "english": "stomach",
+          "susu": "TO BE TRANSLATED", "maninka": "Xɔnɔ", "pular": "reedu",
+          "status": { "maninka": "draft", "pular": "draft" },
+          "picture": "", "audio": ""
+        }
+      ]
+    }
+  ]
+}
